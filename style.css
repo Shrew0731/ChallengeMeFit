@@ -37,7 +37,10 @@ body {
   box-shadow: 3px 3px 10px #696969; /*Shadow color=DarkGrey*/
   align-items: center;
   justify-content: center;
-  padding: 15px 10px;
+  padding: 25px 15px;
+  min-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .app-header .container {
@@ -45,11 +48,11 @@ body {
   flex-direction: column; /*remove if you want logo and search bar on same line*/
   align-items: center;
   justify-content: center;
-  padding: 15px 10px;
+  padding: 25px 15px;
 }
 
 .app-header .logo {
-  width: 170px;
+  width: 250px;
   margin-bottom: 16px;
 }
 
@@ -66,8 +69,8 @@ body {
   box-shadow: 3px 3px 10px #696969; /*Shadow color=DimGrey*/
   margin: 0 auto 16px auto;
   width: 90%; /*this makes the subheader slightly thinner than the header*/
-  font-size: 14px; /*default is 16px*/
-  padding: 10px;
+  font-size: 22px; /*default is 16px*/
+  padding: 25px;
   display: flex; /*subheader has 2 flex items, the div(with the text) and the image. By using flex, it aligns the items side by side*/
   align-items: center;
   justify-content: space-between; /*this allows you to take any remaining space and do what you want with it, in this case we are putting the space between the 2 items. Must use flex in order to use this element*/
@@ -78,19 +81,25 @@ body {
 }
 
 .subheader img {
-  width: 40px;
+  width: 60px;
 }
 
+/*  grid-template-columns: repeat(2, 1fr);*/
+/*this along with the display.grid, gives you the 2 columns*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /*this along with the display.grid, gives you the 2 columns*/
+  grid-template-rows: auto;
   grid-gap: 10px;
 }
 
 .grid .item {
-  display: flex;
-  flex-direction: column;
-  border: 1px #A9A9A9 solid; /*border: width color style*/ /*color=DarkGrey*/
+  flex-direction;
+  box-sizing: border-box;
+  border-top: 1px #A9A9A9 solid;
+  border-right: 2px #A9A9A9 solid;
+  border-bottom: 2px #A9A9A9 solid;
+  border-left: 1px #A9A9A9 solid;
+  /*border: 1px #A9A9A9 solid; /*border: width color style*/ /*color=DarkGrey*/
   padding: 10px; /*this creates space between the border and the elements inside*/
   box-shadow: 1px 1px 2px
 }
@@ -100,6 +109,7 @@ body {
 }
 
 .grid .item p {
+  display: block;
   font-size: 14px;
   color: var(--primary-color);
   font-weight: bold;
@@ -116,9 +126,9 @@ body {
   flex-shrink: 0; /*this works with the html, body height 100% and then .content flex 1 0 auto to make the footer a sticky footer*/
   background: var(--secondary-color);
   color: #FFFFFF;
-  padding: 10px;
-  font-size: 14px;
-  margin-top: 10px;
+  padding: 30px;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .app-footer ul {
@@ -136,7 +146,7 @@ body {
 
 /*this is targeting the icon images for each list item*/
 .app-footer ul li i {
-  font-size: 22px;
+  font-size: 34px;
 }
 
 /* Splash screen */
@@ -156,7 +166,8 @@ body {
 }
 
 #splash img {
-  width: 300px;
+  width: 550px;
+  height: 250px;
 }
 
 /*in orde for this to work, have to use JavaScript which we put in the index.html file*/
@@ -171,7 +182,7 @@ body {
 /*created the mobile version first and now the following is being added to set the display for users when on a webpage and not a phone*/
 @media(min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template: fit-content(30%) /*repeat(2, 1fr); - old code*/
   }
 
   .grid .item img {
