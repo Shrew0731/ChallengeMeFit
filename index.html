@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!--google searched for font awesome cdn for below font link-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--link to css style sheet here -->
+    <link rel="stylesheet" href="style.css">
+    <title>Challenge Me fit</title>
+  </head>
+  <body>
+  <div id="splash">
+      <img src="img/logo.png" alt="" class="logo">
+    </div>
+
+<!--content class wraps around everything execpt for the footer because the footer needs to be sticky-->
+  <div class="content">
+    <header class="app-header">
+      <div class="container">
+      <img src="img/logo.png" alt="" class="logo" />
+        <input type="text" class="search" placeholder="Search..." />
+      </div>
+    </header>
+     <div class="subheader">
+       <div>
+         <p>Now offering paid challenges!</p>
+         <p>Find out more <i class="fa fa-chevron-right"></i></p>
+       </div>
+       <img src="img/moneychallenge.jpg" alt="">
+     </div>
+
+     <div class="grid container">
+       <div class="item">
+         <h4>Challenges</h4>
+         <p>Challenge yourself with individual or team challenges</p>
+       </div>
+       <div class="item">
+         <h4>Exercises</h4>
+         <p>Build your own workout routines</p>
+       </div>
+       <div class="item">
+         <h4>Programs</h4>
+         <p>Find detailed programs to follow</p>
+       </div>
+       <div class="item">
+         <h4>Fitness Forum</h4>
+         <p>Communicate, share ideas, and inspire with the fitness community</p>
+       </div>
+     </div>
+  </div>
+
+    <footer class="app-footer">
+      <ul>
+        <li>
+          <i class="fa fa-home"></i>
+          Home
+        </li>
+        <li>
+          <i class="fa fa-user"></i>
+          Profile
+        </li>
+        <li>
+          <i class="fa fa-book"></i>
+          Diary
+        </li>
+        <li>
+          <i class="fa fa-line-chart"></i>
+          Progress
+        </li>
+      </ul>
+    </footer>
+
+<!--JavaScript for Splash element -->
+    <script>
+      setTimeout(() => {
+        document.getElementById("splash").classList.add('fade');
+      }, 2000);
+    </script>
+
+  </body>
+</html>
