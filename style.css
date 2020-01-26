@@ -10,8 +10,7 @@
 }
 
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
@@ -27,7 +26,7 @@ body {
 
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto; /*0 top & bottom, auto left & right*/
   padding: 10px;
   overflow: none;
 }
@@ -43,9 +42,10 @@ body {
   margin-right: auto;
 }
 
+/*addde the display: flex here instead of in the .app-header because only want the logo and search bar to align*/
 .app-header .container {
-  display: flex;
-  flex-direction: column; /*remove if you want logo and search bar on same line*/
+  display: flex; /*by defult this aligns the elements in the container horizontally*/
+  flex-direction: column; /*only needed if you want elements to align vertically*/
   align-items: center;
   justify-content: center;
   padding: 25px 15px;
@@ -58,7 +58,7 @@ body {
 
 .app-header input[type="text"] {
   padding-left: 7px;
-  width: 300px;
+  width: 450px;
   border: 0;
   border-radius: 3px;
 }
@@ -67,9 +67,9 @@ body {
   background-color: var(--secondary-color);
   color: #FFFFFF; /*color=White*/
   box-shadow: 3px 3px 10px #696969; /*Shadow color=DimGrey*/
-  margin: 0 auto 16px auto;
+  margin: 0 auto 16px auto; /*0 =top, auto=right, 16=bottom, auto=left*/
   width: 90%; /*this makes the subheader slightly thinner than the header*/
-  font-size: 22px; /*default is 16px*/
+  font-size: 28px; /*default is 16px*/
   padding: 25px;
   display: flex; /*subheader has 2 flex items, the div(with the text) and the image. By using flex, it aligns the items side by side*/
   align-items: center;
@@ -84,16 +84,17 @@ body {
   width: 60px;
 }
 
+/*ParentGrid property*/
 /*  grid-template-columns: repeat(2, 1fr);*/
 /*this along with the display.grid, gives you the 2 columns*/
 .grid {
   display: grid;
   grid-template-rows: auto;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
+/*use display flex in order to easily allgin items in the same area*/
 .grid .item {
-  flex-direction;
   box-sizing: border-box;
   border-top: 1px #A9A9A9 solid;
   border-right: 2px #A9A9A9 solid;
@@ -101,11 +102,11 @@ body {
   border-left: 1px #A9A9A9 solid;
   /*border: 1px #A9A9A9 solid; /*border: width color style*/ /*color=DarkGrey*/
   padding: 10px; /*this creates space between the border and the elements inside*/
-  box-shadow: 1px 1px 2px
+  box-shadow: 1px 1px 2px #696969;
 }
 
 .grid .item h4{
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .grid .item p {
@@ -116,6 +117,7 @@ body {
   margin-bottom: 20px;
 }
 
+/*no images for this yet. this is for the 4 boxes. align.self: will not work until display: flex is put in the .grid .item*/
 .grid .item img {
   width: 30px;
   align-self: flex-end; /*this is aligning the icon images to the bottom right. We used align.self here because in the parent grid item above we put the display.text*/
@@ -151,10 +153,10 @@ body {
 
 /* Splash screen */
 #splash {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: absolute; /*this is so you can maniuplate the screen with the next 4 elements*/
+  top: 0; /*makes it start at the top corner*/
+  left: 0; /*makes it start at the top-left corner*/
+  width: 100%; /*makes it go from one side of the screen to the other*/
   height: 100vh; /*this makes it take up the whole page*/
   background-color: var(--primary-color);
   z-index: 2; /*this makes it so the image always stays ontop*/
@@ -162,7 +164,7 @@ body {
   flex-direction: column;
   align-items: center; /*this aligns the item horizontally*/
   justify-content: center; /*this aligns the item vertically*/
-  transition: opacity 1s; /*this works with the splash .fade below and JavaScript to make the image fade out after 1 second*/
+  transition: opacity 1s; /*this works with the splash.fade below and JavaScript to make the image fade out after 1 second*/
 }
 
 #splash img {
@@ -178,7 +180,7 @@ body {
 }
 
 
-
+/*if the screen is 768 or larger then the following will apply*/
 /*created the mobile version first and now the following is being added to set the display for users when on a webpage and not a phone*/
 @media(min-width: 768px) {
   .grid {
